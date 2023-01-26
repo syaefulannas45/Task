@@ -3,11 +3,11 @@ import { Navigate } from "react-router-dom";
 import FormLogin from "../components/medium/FormLogin";
 
 const Login = () => {
-  // const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
-  // if (token) {
-  //   return <Navigate to={"/dashboard"} replace={true} />;
-  // }
+  if (token) {
+    return <Navigate to={"/dashboard"} replace={true} />;
+  }
 
   return (
     <>
