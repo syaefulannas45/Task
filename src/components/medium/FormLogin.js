@@ -5,16 +5,25 @@ import CButton from "../low/Button";
 import CInput from "../low/Input";
 
 const FormLogin = () => {
+  const handlePassword = () => {
+    let password = document.getElementById("password1");
+    if (password.type === "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
+  };
   const [form, setForm] = useState({
     username: "",
     password: "",
   });
+
+  const [handleAccount, setHandleAccount] = useState([]);
   const navigate = useNavigate();
 
- 
   const [nameError, setNameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const validation = () => {
+  const validation1 = () => {
     if (!form.username.includes("@") && form.password.length < 5) {
       setNameError("Harap masukan email yang benar");
       setPasswordError("Password Terlalu lemah");
@@ -22,6 +31,18 @@ const FormLogin = () => {
       setNameError("Harap masukan email yang benar");
     } else if (form.password.length < 5) {
       setPasswordError("Password Terlalu lemah");
+    } else {
+      return true;
+    }
+  };
+  const validation2 = () => {
+    if (form.username != handleAccount.email && form.password) {
+      setNameError("Email tidak terdaftar");
+      setPasswordError("Password Salah");
+    } else if (form.username != handleAccount.email) {
+      setNameError("Email tidak terdaftar");
+    } else if (form.password) {
+      setPasswordError("Password Salah");
     } else {
       return true;
     }
@@ -38,8 +59,23 @@ const FormLogin = () => {
     } catch (err) {
       setPasswordError();
       setNameError();
-      if (validation()) {
+      if (validation1()) {
+        if (validation2()) {
+        }
       }
+    }
+  };
+
+  const getAccount = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    try {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      const res = await axios.get("https://nimda.blazingwa.com/api/user/profile");
+      setHandleAccount(res.data.data.profile);
+      console.log(res.data.data.profile.password);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -60,8 +96,12 @@ const FormLogin = () => {
         </label>
         <br />
         <div className="relative">
-          <CInput placeholder="Enter your password" type="password" className="w-full py-[10px] px-[60px]" name="password" value={form.password} onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })} />
+          <CInput placeholder="Enter your password" type="password" className="w-full py-[10px] px-[60px]" name="password" value={form.password} onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })} id="password1" />
           <img src="/images/key.svg" alt="password" className="absolute top-[10%]" /> <br />
+          <label htmlFor="checkbox">
+            <img src="/images/show.svg" alt="show" className="absolute top-[15%] right-4 cursor-pointer" />
+          </label>
+          <input type="checkbox" onClick={handlePassword} id="checkbox" className="hidden" />
           <p className="text-red-500">{passwordError}</p>
         </div>
         <div className="flex justify-between pt-[30px]">
@@ -82,6 +122,7 @@ const FormLogin = () => {
           </Link>
         </p>
       </form>
+      <button onClick={getAccount}>klik</button>
     </>
   );
 };
