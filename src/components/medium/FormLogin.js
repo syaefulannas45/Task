@@ -36,10 +36,9 @@ const FormLogin = () => {
     }
   };
   const validation2 = () => {
-    if (form.username != handleAccount.email && form.password) {
-      setNameError("Email tidak terdaftar");
-      setPasswordError("Password Salah");
-    } else if (form.username != handleAccount.email) {
+    if (form.username !== handleAccount.email && form.password != "s") {
+      setPasswordError("Password salah")
+    } else if (form.username !== handleAccount.email) {
       setNameError("Email tidak terdaftar");
     } else if (form.password) {
       setPasswordError("Password Salah");
