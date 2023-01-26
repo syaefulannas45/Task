@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import FormRegister from "../components/medium/FormRegister";
 
 const Signup = () => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    return <Navigate to={"/dashboard"} replace={true} />;
+  }
   return (
     <>
       <section id="register" className="">

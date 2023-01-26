@@ -16,7 +16,7 @@ const FormRegister = () => {
   });
 
   const handleSubmit = async (e) => {
-    const token = localStorage.getItem("token");
+
     e.preventDefault();
     try {
       const res = await axios.post("https://nimda.blazingwa.com/api/register/", { ...form });
@@ -27,9 +27,7 @@ const FormRegister = () => {
       console.log(error.response.data);
     }
 
-    if (token) {
-      return <Navigate to={"/dashboard"} replace={true} />;
-    }
+   
   };
 
   return (
