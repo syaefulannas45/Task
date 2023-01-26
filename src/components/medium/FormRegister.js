@@ -39,9 +39,9 @@ const FormRegister = () => {
               First name
             </label>
             <CInput
-              placeholder="Enter your firstname"
+              placeholder="firstname"
               type="text"
-              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:px-[50px]"
+              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:lg:px-[50px]"
               name="firstname"
               value={form.firstname}
               onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}
@@ -52,9 +52,9 @@ const FormRegister = () => {
               Last name
             </label>
             <CInput
-              placeholder="Enter your lastname"
+              placeholder="lastname"
               type="text"
-              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:px-[50px]"
+              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:lg:px-[50px]"
               name="lastname"
               value={form.lastname}
               onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}
@@ -81,7 +81,7 @@ const FormRegister = () => {
         <CInput
           placeholder="Enter your country"
           type="text"
-          className="mb-4 w-[100%] border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:px-[50px]"
+          className="mb-4 w-[100%] border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:lg:px-[50px]"
           name="country"
           value={form.country}
           onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}
@@ -98,21 +98,21 @@ const FormRegister = () => {
           <CInput
             placeholder="Enter your phone number"
             type="text"
-            className="mb-4 w-[100%] border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:px-[50px]"
+            className="mb-4 w-[100%] border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:lg:px-[50px]"
             name="mobile"
             value={form.mobile}
             onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}
           />
         </div>
-        <div className="mb-4 flex space-x-[20px]">
+        <div className="mb-4 flex space-x-[20px] items-center">
           <div className="w-2/4">
             <label htmlFor="" className="text-[#666666]">
               Password
             </label>
             <CInput
-              placeholder="Enter your firstname"
+              placeholder="password"
               type="password"
-              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:px-[50px]"
+              className="w-full border bg-[#F5F6FA] py-[10px] px-[40px] placeholder:lg:px-[50px]"
               name="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}
@@ -120,12 +120,12 @@ const FormRegister = () => {
           </div>
           <div className="w-2/4">
             <label htmlFor="" className="text-[#666666]">
-              Password Confirmation
+              Confirm Password
             </label>
             <CInput
-              placeholder="Confirm your password"
+              placeholder="Confirm password"
               type="password"
-              className="w-full border bg-[#F5F6FA] py-[10px] px-[30px] placeholder:px-[50px]"
+              className="w-full border bg-[#F5F6FA] py-[10px] px-[30px] placeholder:lg:px-[50px]"
               name="password_confirmation"
               value={form.password_confirmation}
               onChange={(e) => setForm({ ...form, [e.target.name]: e.target.value })}

@@ -11,18 +11,18 @@ const Login = () => {
 
   return (
     <>
-      <section id="signin" className="pt-[120px] w-full px-[226px]">
-        <div className="flex bg-background-100 py-[45px] px-[50px]">
-          <div className="w-2/4">
+      <section id="signin" className="pt-[100px] w-full px-4 lg:px-[226px]">
+        <div className="lg:flex bg-background-100 py-[45px] px-4 lg:px-[50px]">
+          <div className="lg:w-2/4 w-full">
             <img src="/images/hero.svg" alt="hero" />
-            <div className="flex space-x-[15px] px-[50px]">
-              <img src="/images/appstore.svg" alt="appstore" />
-              <img src="/images/gplay.svg" alt="gplay" />
+            <div className="flex space-x-[15px] lg:px-[50px]">
+              <img src="/images/appstore.svg" alt="appstore" className="w-[45%]"/>
+              <img src="/images/gplay.svg" alt="gplay" className="w-2/4"/>
             </div>
           </div>
-          <div className="w-2/4">
-            <p className="text-[30px] font-semibold text-button-100">Login</p>
-            <div className="flex items-center space-x-[20px] pt-[30px]">
+          <div className="lg:w-2/4 w-full">
+            <p className="text-[30px] font-semibold text-button-100 pt-4 lg:pt-0">Login</p>
+            <div className="flex items-center justify-evenly flex-wrap lg:flex-nowrap space-x-1 space-y-1 lg:space-y-0 lg:space-x-[20px] pt-[30px] w-full">
               <div className="flex space-x-[10px] bg-white py-[16px] px-[20px]">
                 <img src="/images/google.svg" alt="google" /> <p>Goggle</p>
               </div>

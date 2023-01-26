@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { Navigate } from "react-router-dom";
 import FormRegister from "../components/medium/FormRegister";
 
 const Signup = () => {
@@ -11,8 +11,8 @@ const Signup = () => {
   return (
     <>
       <section id="register" className="">
-        <div className="flex w-full">
-          <div className="w-2/4 bg-[#E8EAF2] py-[100px] px-[40px]">
+        <div className="lg:flex w-full">
+          <div className="lg:w-2/4 bg-[#E8EAF2] py-[100px] px-[40px]">
             <p className="text-[32px] font-bold">What does your free trial include?</p>
             <p className="mt-[30px] text-[20px] font-bold">For 7 days, you get access to BLAZINGWA’s Sandbox Account.</p>
             <p className="mt-[15px] text-[17px]">This means that you can use any active WhatsApp number to learn all about BLAZINGWA’s exciting features like:</p>
@@ -48,7 +48,7 @@ const Signup = () => {
             </ul>
             <p className="mt-[35px] text-[17px] font-semibold">To use our free trial version, you do not need Facebook Verification or WhatsApp API registration.</p>
           </div>
-          <div className="w-2/4 py-[100px] px-[65px]">
+          <div className="lg:w-2/4 py-6 lg:py-[100px] px-4 lg:px-[65px]">
             <h1 className="pb-6 text-4xl text-button-100">Start your free trial</h1>
             <Link to={"/"} className="text-sky-500">
               {"<"} Back
